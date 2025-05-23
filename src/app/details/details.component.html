@@ -1,32 +1,57 @@
-<article>
-  <img
-    class="listing-photo"
-    [src]="housingLocation?.photo"
-    alt="Exterior photo of {{ housingLocation?.name }}"
-    crossorigin
-  />
-  <section class="listing-description">
-    <h2 class="listing-heading">{{ housingLocation?.name }}</h2>
-    <p class="listing-location">{{ housingLocation?.city }}, {{ housingLocation?.state }}</p>
-  </section>
-  <section class="listing-features">
-    <h2 class="section-heading">About this housing location</h2>
-    <ul>
-      <li>Units available: {{ housingLocation?.availableUnits }}</li>
-      <li>Does this location have wifi: {{ housingLocation?.wifi }}</li>
-      <li>Does this location have laundry: {{ housingLocation?.laundry }}</li>
-    </ul>
-  </section>
-  <section class="listing-apply">
-    <h2 class="section-heading">Apply now to live here</h2>
-    <form [formGroup]="applyForm" (submit)="submitApplication()">
-      <label for="first-name">First Name</label>
-      <input id="first-name" type="text" formControlName="firstName" />
-      <label for="last-name">Last Name</label>
-      <input id="last-name" type="text" formControlName="lastName" />
-      <label for="email">Email</label>
-      <input id="email" type="email" formControlName="email" />
-      <button type="submit" class="primary">Apply now</button>
-    </form>
-  </section>
+<article class="listing-container">
+  <div class="listing-image">
+    <img
+      class="sh-listing-photo"
+      [src]="housingLocation?.photo"
+      alt="Exterior photo of {{ housingLocation?.name }}"
+      crossorigin
+    />
+  </div>
+  <div class="listing-content">
+    <section class="sh-description">
+      <h2 class="sh-listing-heading">{{ housingLocation?.name }}</h2>
+      <p class="sh-listing-location">
+        <sl-icon name="geo-alt" class="icon"></sl-icon>
+        {{ housingLocation?.city }}, {{ housingLocation?.state }}
+      </p>
+
+      <section class="listing-features">
+        <h2 class="section-heading">About this housing location</h2>
+        <ul>
+          <li>Units available: {{ housingLocation?.availableUnits }}</li>
+          <li>Wifi: {{ housingLocation?.wifi }}</li>
+          <li>Laundry: {{ housingLocation?.laundry }}</li>
+        </ul>
+      </section>
+
+      <section class="listing-apply">
+        <h2 class="section-heading">Apply now to live here</h2>
+        <form [formGroup]="applyForm" (submit)="submitApplication()">
+          <sl-input 
+            class="input" 
+            label="First Name" 
+            placeholder="e.g. Sara"
+            [value]="applyForm.get('firstName')?.value"
+            (sl-input)="onInputChange('firstName', $event)">
+          </sl-input>
+          <sl-input 
+            class="input" 
+            label="Last Name" 
+            placeholder="e.g. Johnson"
+            [value]="applyForm.get('lastName')?.value"
+            (sl-input)="onInputChange('lastName', $event)">
+          </sl-input>
+          <sl-input 
+            class="input" 
+            label="Email" 
+            type="email" 
+            placeholder="e.g. sara@example.com"
+            [value]="applyForm.get('email')?.value"
+            (sl-input)="onInputChange('email', $event)">
+          </sl-input>
+          <sl-button type="submit" variant="primary" color="accent">Apply now</sl-button>
+        </form>
+      </section>
+    </section>
+  </div>
 </article>

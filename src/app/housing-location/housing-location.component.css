@@ -1,30 +1,30 @@
 .listing {
-  background: var(--accent-color);
-  border-radius: 30px;
-  padding-bottom: 30px;
+  background: var(--sl-color-neutral-50);
+  border-radius: var(--sl-border-radius-x-large);
+  padding-bottom: var(--sl-spacing-2x-large);
 }
 .listing-heading {
-  color: var(--primary-color);
-  padding: 10px 20px 0 20px;
+  color: var(--sl-color-neutral-700);
+  padding: var(--sl-spacing-x-small) var(--sl-spacing-small) 0 var(--sl-spacing-large);
 }
 .listing-photo {
   height: 250px;
   width: 100%;
   object-fit: cover;
-  border-radius: 30px 30px 0 0;
+  border-radius: var(--sl-border-radius-x-large) var(--sl-border-radius-x-large) 0 0;
 }
 .listing-location {
-  padding: 10px 20px 20px 20px;
-}
-.listing-location::before {
-  content: url("/assets/location-pin.svg") / "";
+  padding: var(--sl-spacing-x-small) var(--sl-spacing-large) var(--sl-spacing-large) var(--sl-spacing-large);
 }
 section.listing a {
-  padding-left: 20px;
+  padding-left: var(--sl-spacing-large);
   text-decoration: none;
-  color: var(--primary-color);
+  color: var(--sl-color-neutral-700);
+  display: inline-flex;
+  align-items: center;
+  gap:var(--sl-spacing-2x-small)
 }
-section.listing a::after {
-  content: "\203A";
-  margin-left: 5px;
+
+.icon {
+  color: var(--sl-color-neutral-700);
 }

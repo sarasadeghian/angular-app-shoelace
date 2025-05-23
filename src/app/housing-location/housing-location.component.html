@@ -6,6 +6,10 @@
     crossorigin
   />
   <h2 class="listing-heading">{{ housingLocation.name }}</h2>
-  <p class="listing-location">{{ housingLocation.city }}, {{ housingLocation.state }}</p>
-  <a [routerLink]="['/details', housingLocation.id]">Learn More</a>
+  <p class="listing-location">
+    <sl-icon name="geo-alt-fill" class="icon"></sl-icon>
+    
+    {{ housingLocation.city }}, {{ housingLocation.state }}
+  </p>
+  <a [routerLink]="['/details', housingLocation.id]">Learn More<sl-icon name="arrow-right-short" class="icon"></sl-icon></a>
 </section>

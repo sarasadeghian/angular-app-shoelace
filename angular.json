@@ -49,12 +49,10 @@
             "inlineStyleLanguage": "scss",
             "assets": ["src/favicon.ico", "src/assets"],
             "styles": [
-              "src/styles.css",
-              "@shoelace-style/shoelace/dist/themes/light.css"
+              "@shoelace-style/shoelace/dist/themes/light.css",
+              "src/styles.css"
           ],
-            "scripts": [
-              "@shoelace-style/shoelace/dist/shoelace.js"
-            ]
+            "scripts": []
           },
           "configurations": {
             "production": {

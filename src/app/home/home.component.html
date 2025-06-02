@@ -1,9 +1,7 @@
 <section>
-  <form>
-    <sl-input type="text" placeholder="Filter by city" size="medium" #filter>
-      <sl-icon name="search" slot="suffix" (click)="filterResults(filter.value)"/>
-    </sl-input>
-  </form>
+  <sl-input type="text" placeholder="Filter by city" size="medium" #filter (keydown.enter)="filterResults(filter.value)">
+    <sl-icon name="search" slot="suffix" (click)="filterResults(filter.value)"/>
+  </sl-input>
 </section>
 <section class="results">
   <app-housing-location
